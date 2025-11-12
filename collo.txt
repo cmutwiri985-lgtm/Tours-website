@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Services | Skyset Tours and Travel</title>
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+body {background-color:#f0fff0; color:#333;}
+
+/* Navbar */
+nav {
+  position:fixed; top:0; width:100%; z-index:1000;
+  background:linear-gradient(90deg,#014d2b,#00c88f);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:15px 5%;
+  box-shadow:0 3px 6px rgba(0,0,0,0.2);
+}
+nav .logo {color:#fff; font-size:22px; font-weight:700;}
+nav ul {display:flex; list-style:none;}
+nav ul li {margin:0 15px;}
+nav ul li a {color:#fff; text-decoration:none; font-weight:500; transition:0.3s;}
+nav ul li a:hover, nav ul li a.active {color:gold;}
+
+/* Hero Section */
+.hero {
+  background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80') no-repeat center/cover;
+  height:50vh; width:100%; display:flex; flex-direction:column;
+  justify-content:center; align-items:center; text-align:center; color:#fff; position:relative;
+}
+.hero::after {
+  content:''; position:absolute; top:0; left:0; right:0; bottom:0;
+  background:rgba(1,77,43,0.6);
+}
+.hero h1 {position:relative; font-size:3em; color:gold;}
+.hero p {position:relative; margin-top:15px; font-size:1.2em;}
+.hero .breadcrumb {position:relative; margin-top:10px; font-size:0.9em; color:#ddd;}
+.hero .breadcrumb a {color:gold; text-decoration:none;}
+.hero .breadcrumb a:hover {text-decoration:underline;}
+
+/* Back Button */
+.back-btn {
+  display:inline-block; margin:20px auto; background:#014d2b; color:gold;
+  padding:10px 20px; border-radius:25px; text-decoration:none; font-weight:600; transition:0.3s;
+}
+.back-btn:hover {background:gold; color:#014d2b;}
+
+/* Sections */
+section {padding:60px 5%; text-align:center;}
+section h2 {font-size:2em; color:#014d2b; margin-bottom:20px;}
+section p {color:#333; margin-bottom:40px;}
+
+/* Service Grid */
+.services {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+/* Service Card with splash */
+.service {
+  position:relative; overflow:hidden; border-radius:12px;
+  box-shadow:0 3px 8px rgba(0,0,0,0.2); background:#fff;
+  transition:transform 0.3s;
+}
+.service:hover {transform:translateY(-5px);}
+.service img {
+  width:100%; height:180px; object-fit:cover;
+  transition: transform 0.5s;
+}
+.service:hover img {transform:scale(1.1);}
+.service .overlay {
+  position:absolute; top:0; left:0; right:0; bottom:0;
+  background:rgba(0,200,143,0.7); color:#fff;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  opacity:0; transition:opacity 0.4s, transform 0.4s;
+  transform:scale(0.8);
+}
+.service:hover .overlay {
+  opacity:1; transform:scale(1);
+}
+.service .overlay h3 {font-size:1.2em; margin-bottom:10px;}
+.service .overlay a {
+  background:gold; color:#014d2b; padding:6px 14px;
+  border-radius:20px; text-decoration:none; font-weight:600; transition:0.3s;
+}
+.service .overlay a:hover {background:#fff;}
+.service .overlay i {
+  font-size:2em; margin-bottom:10px; animation: bounce 1s infinite alternate;
+}
+@keyframes bounce {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-10px);}
+}
+
+/* CTA */
+.cta {
+  background:linear-gradient(90deg,#014d2b,#00c88f);
+  color:#fff; padding:60px 10%; text-align:center;
+}
+.cta h2 {font-size:2em; color:gold;}
+.cta a {
+  display:inline-block; margin-top:20px; background:gold; color:#014d2b;
+  padding:10px 20px; border-radius:25px; text-decoration:none; font-weight:600;
+}
+.cta a:hover {background:#fff;}
+
+/* Footer */
+footer {
+  background:#014d2b; color:#fff; padding:40px 10%;
+}
+footer .footer-content {
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px; text-align:left;
+}
+footer h4 {color:gold; margin-bottom:10px;}
+footer a {color:#fff; text-decoration:none; display:block; margin-bottom:5px; transition:0.3s;}
+footer a:hover {color:gold;}
+footer .socials a {display:inline-block; margin-right:10px; font-size:1.4em;}
+footer .socials a i {transition:0.3s;}
+footer .socials a:hover i {color:gold;}
+footer p {margin-top:15px; font-size:0.9em; text-align:center;}
+
+@media(max-width:768px){.hero h1{font-size:2em;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Skyset Tours & Travel</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="destinations.html">Destinations</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <h1>All Our Services</h1>
+  <p>Discover everything we offer to make your travel extraordinary.</p>
+  <div class="breadcrumb"><a href="index.html">Home</a> › <a href="services.html">Services</a> › All Services</div>
+</div>
+
+<a href="services.html" class="back-btn">← Back to Services</a>
+
+<section>
+  <h2>Explore 20 Services</h2>
+  <p>Click on any service to learn more and plan your next trip with us.</p>
+
+  <div class="services">
+    <!-- 20 service cards with unique icons -->
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Flight+Booking"><div class="overlay"><i class="fas fa-plane"></i><h3>Flight Booking</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Hotel+Reservation"><div class="overlay"><i class="fas fa-hotel"></i><h3>Hotel Reservation</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Holiday+Packages"><div class="overlay"><i class="fas fa-suitcase-rolling"></i><h3>Holiday Packages</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Visa+Assistance"><div class="overlay"><i class="fas fa-passport"></i><h3>Visa Assistance</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Car+Rentals"><div class="overlay"><i class="fas fa-car"></i><h3>Car Rentals</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Corporate+Travel"><div class="overlay"><i class="fas fa-briefcase"></i><h3>Corporate Travel</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Travel+Insurance"><div class="overlay"><i class="fas fa-shield-alt"></i><h3>Travel Insurance</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Custom+Tours"><div class="overlay"><i class="fas fa-route"></i><h3>Custom Tours</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Adventure+Trips"><div class="overlay"><i class="fas fa-hiking"></i><h3>Adventure Trips</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Beach+Vacations"><div class="overlay"><i class="fas fa-umbrella-beach"></i><h3>Beach Vacations</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Safari+Tours"><div class="overlay"><i class="fas fa-tree"></i><h3>Safari Tours</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=City+Tours"><div class="overlay"><i class="fas fa-city"></i><h3>City Tours</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Cultural+Tours"><div class="overlay"><i class="fas fa-landmark"></i><h3>Cultural Tours</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Group+Tours"><div class="overlay"><i class="fas fa-users"></i><h3>Group Tours</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Luxury+Tours"><div class="overlay"><i class="fas fa-gem"></i><h3>Luxury Tours</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Backpacking"><div class="overlay"><i class="fas fa-hiking"></i><h3>Backpacking</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Honeymoon+Packages"><div class="overlay"><i class="fas fa-heart"></i><h3>Honeymoon Packages</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Cruise+Trips"><div class="overlay"><i class="fas fa-ship"></i><h3>Cruise Trips</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Train+Journeys"><div class="overlay"><i class="fas fa-train"></i><h3>Train Journeys</h3><a href="#">Learn More</a></div></div>
+    <div class="service"><img src="https://via.placeholder.com/400x180?text=Eco+Tours"><div class="overlay"><i class="fas fa-leaf"></i><h3>Eco Tours</h3><a href="#">Learn More</a></div></div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Ready for your next adventure?</h2>
+  <a href="contact.html">Contact Us</a>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div>
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="destinations.html">Destinations</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h4>Contact Info</h4>
+      <p>Email: skysettours@gmail.com</p>
+      <p>WhatsApp: 0790220876</p>
+      <p>Nairobi, Kenya</p>
+    </div>
+    <div>
+      <h4>Follow Us</h4>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook-f" style="color:#1877F2;"></i></a>
+        <a href="#"><i class="fab fa-instagram" style="color:#E4405F;"></i></a>
+        <a href="#"><i class="fab fa-x-twitter" style="color:#000;"></i></a>
+        <a href="#"><i class="fab fa-youtube" style="color:#FF0000;"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in" style="color:#0A66C2;"></i></a>
+      </div>
+    </div>
+  </div>
+  <p>© 2025 Skyset Tours and Travel. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

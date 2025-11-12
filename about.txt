@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Us — Skyset Tours and Travel Limited | Kenya & Africa Travel Experts</title>
+  <meta name="description" content="Learn about Skyset Tours and Travel — our mission, vision, values, expert team, and tailored Kenya & Africa travel services."/>
+  <style>
+    :root{
+      --green-dark:#004c99;
+      --green-light:#f66435;
+      --gold:#f4c150;
+      --muted:#004c99;
+      --bg:#fffcef;
+      --maxw:1200px;
+      --glass: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      background:var(--bg);color:#042028;-webkit-font-smoothing:antialiased;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+    /* ---------- cursor ---------- */
+    .cursor{
+      position:fixed;left:0;top:0;width:14px;height:14px;border-radius:50%;pointer-events:none;z-index:99999;
+      background:var(--gold);transform:translate(-50%,-50%);transition:width .12s,height .12s,opacity .12s,transform .12s;
+      box-shadow:0 6px 18px rgba(4,73,39,0.12);
+    }
+    .cursor.big{width:46px;height:46px;background:rgba(244,193,80,0.12);}
+
+    /* ---------- NAVBAR ---------- */
+    header.nav{
+      position:fixed;left:0;right:0;top:0;z-index:9998;
+      background:linear-gradient(90deg,var(--green-dark), var(--green-light));
+      color:#fff;padding:10px 0;box-shadow:0 6px 18px rgba(4,73,39,0.12);backdrop-filter: blur(4px);
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:6px 20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--gold),#ffc85a);display:flex;align-items:center;justify-content:center;color:var(--green-dark);font-weight:800;font-size:16px}
+    .site-name{font-weight:800;font-size:18px}
+    nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
+    nav a{padding:8px 12px;border-radius:8px;color:#fff;font-weight:700;transition:all .18s}
+    nav a:hover{background:rgba(255,255,255,0.08);color:var(--gold)}
+    nav a.active{background:rgba(255,255,255,0.12);box-shadow:inset 0 -3px 0 rgba(0,0,0,0.06)}
+    .cta-btn{background:var(--gold);color:var(--green-dark);padding:8px 12px;border-radius:8px;font-weight:800}
+    .hamburger{display:none;cursor:pointer}
+    @media(max-width:920px){
+      nav ul{display:none;position:absolute;top:64px;right:18px;background:#fff;color:var(--green-dark);padding:12px;border-radius:12px;box-shadow:0 10px 30px rgba(3,37,51,0.12);flex-direction:column;}
+      nav ul a{color:var(--green-dark);display:block;padding:10px 12px}
+      .hamburger{display:block}
+    }
+
+    /* ---------- HERO (static image) ---------- */
+    .hero{
+      position:relative;height:78vh;min-height:520px;overflow:hidden;margin-top:64px;
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80');
+      background-size:cover;background-position:center;
+    }
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,56,34,0.55),rgba(2,56,34,0.35));z-index:1}
+    .hero-content{position:relative;z-index:3;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:0 20px;text-align:center;color:#fff}
+    .hero h1{font-size:44px;font-weight:900;color:var(--gold);letter-spacing:0.4px;margin-bottom:10px;white-space:nowrap;overflow:hidden;border-right:4px solid rgba(244,193,80,0.95)}
+    .hero p{font-size:18px;max-width:920px;color:rgba(255,255,255,0.95);margin-bottom:14px}
+    .breadcrumb{margin-top:10px;color:rgba(255,255,255,0.85)}
+    .breadcrumb a{color:rgba(255,255,255,0.95);text-decoration:underline}
+
+    @keyframes typing { to { width: 50ch; } }
+    @keyframes blink { 50% { border-color: transparent; } }
+
+    /* ---------- splashes ---------- */
+    .splash-layer{position:absolute;inset:0;pointer-events:none;z-index:2}
+    .splash{position:absolute;border-radius:50%;opacity:.10;filter:blur(10px);animation:floaty 9s ease-in-out infinite}
+    .sp1{width:220px;height:220px;background:radial-gradient(circle,#fff,#dff6fb);left:-40px;top:8%}
+    .sp2{width:160px;height:160px;background:radial-gradient(circle,#fff,#fef0d6);right:6%;top:12%}
+    .sp3{width:120px;height:120px;background:radial-gradient(circle,#fff,#e6f8ee);left:44%;bottom:8%}
+    .sp4{width:180px;height:180px;background:radial-gradient(circle,#fff,#e9f0ff);right:18%;bottom:10%}
+    .sp5{width:140px;height:140px;background:radial-gradient(circle,#fff,#fbeae6);left:12%;top:50%}
+    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-18px)}100%{transform:translateY(0)}}
+
+    /* ---------- main content ---------- */
+    main{padding-bottom:60px}
+    section{padding:54px 0}
+    h2.section-title{text-align:center;font-size:28px;margin-bottom:12px;font-weight:900;color:var(--green-dark)}
+    p.lead{text-align:center;color:#04393b;max-width:920px;margin:0 auto 18px;line-height:1.7}
+
+    /* two-column intro */
+    .intro{display:flex;gap:28px;align-items:center;justify-content:center;max-width:1100px;margin:18px auto;flex-wrap:wrap}
+    .intro .text{flex:1;min-width:300px}
+    .intro .image{flex:1;min-width:300px}
+    .intro img{width:100%;border-radius:12px;box-shadow:0 10px 30px rgba(3,37,51,0.06)}
+
+    /* mission/vision/values */
+    .trio{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;max-width:1100px;margin:0 auto}
+    .card{background:#fff;border-radius:12px;padding:20px;box-shadow:0 10px 30px rgba(3,37,51,0.06);text-align:center}
+
+    /* services preview */
+    .services-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;max-width:1100px;margin:12px auto}
+    .service-card{position:relative;width:260px;height:160px;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(3,37,51,0.06)}
+    .service-card img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.65)}
+    .service-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:18px;text-align:center;padding:10px}
+
+    /* destinations preview */
+    .dest-row{background:#fff;border-radius:12px;padding:12px;box-shadow:0 10px 30px rgba(3,37,51,0.04);max-width:1100px;margin:18px auto}
+    .dest-track{display:flex;gap:10px;overflow:hidden;padding:6px}
+    .dest-card{flex:0 0 320px;height:160px;border-radius:10px;background-size:cover;background-position:center;position:relative}
+    .dest-card .label{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,0.5);color:white;padding:8px 10px;border-radius:8px;font-weight:800}
+
+    /* team */
+    .team{display:flex;gap:18px;flex-wrap:wrap;justify-content:center;max-width:1100px;margin:12px auto}
+    .member{width:220px;background:#fff;border-radius:12px;padding:12px;text-align:center;box-shadow:0 10px 30px rgba(3,37,51,0.06)}
+    .member img{width:100%;border-radius:10px}
+    .member h4{margin-top:8px;color:var(--green-dark)}
+
+    /* testimonials */
+    .testimonials{background:#f6f9f9;padding:36px 0}
+    .testimonial{max-width:800px;margin:0 auto;font-style:italic;color:#333;text-align:center}
+
+    /* contact prompt */
+    .contact-prompt{background:linear-gradient(90deg,var(--green-dark),var(--green-light));color:#fff;padding:36px 20px;border-radius:12px;max-width:1100px;margin:20px auto;text-align:center}
+    .contact-prompt .btn{background:var(--gold);color:var(--green-dark);padding:10px 14px;border-radius:8px;font-weight:800;display:inline-block;margin-top:12px}
+
+    /* footer */
+    footer{padding:28px 0;background:var(--green-dark);color:#e7f3f6}
+    .footer-inner{display:flex;gap:20px;align-items:flex-start;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    .footer-links{display:flex;flex-direction:column;gap:8px}
+    .social-row{display:flex;gap:8px;align-items:center}
+
+    @media(max-width:900px){
+      .intro{flex-direction:column}
+      .service-card{width:100%;max-width:520px}
+      .team{justify-content:center}
+      .footer-inner{flex-direction:column;gap:12px}
+    }
+  </style>
+
+  <!-- Organization Schema for SEO -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"TravelAgency","name":"Skyset Tours and Travel Limited","url":"https://www.yoursite.com","logo":"https://www.yoursite.com/images/logo.png","sameAs":["https://www.facebook.com/yourpage","https://www.instagram.com/yourpage","https://twitter.com/yourpage","https://www.linkedin.com/yourpage","https://www.youtube.com/yourpage"],"contactPoint":{"@type":"ContactPoint","email":"skysettours@gmail.com","telephone":"+254790220876","contactType":"Customer Service"},"address":{"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"Kenya"}}
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Skyset Tours and Travel Limited",
+    "url": "https://www.yoursite.com",
+    "logo": "https://www.yoursite.com/images/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/yourpage",
+      "https://www.instagram.com/yourpage",
+      "https://twitter.com/yourpage",
+      "https://www.linkedin.com/yourpage",
+      "https://www.youtube.com/yourpage"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "skysettours@gmail.com",
+      "telephone": "+254790220876",
+      "contactType": "Customer Service"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressCountry": "Kenya"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- cursor -->
+  <div class="cursor" id="cursor"></div>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner container">
+      <div class="brand">
+        <div class="logo">ST</div>
+        <div>
+          <div class="site-name">Skyset Tours and Travel Limited</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.9)">Explore • Dream • Discover</div>
+        </div>
+      </div>
+
+      <nav>
+        <div class="hamburger" id="burger">☰</div>
+        <ul id="navList">
+          <li><a href="index.html" class="nav-link" data-target="home">Home</a></li>
+          <li><a href="services.html" class="nav-link" data-target="services">Services</a></li>
+          <li><a href="destinations.html" class="nav-link" data-target="destinations">Destinations</a></li>
+          <li><a href="contact.html" class="nav-link" data-target="contact">Contact</a></li>
+          <li><a class="cta-btn" href="contact.html">Book Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header> 
+
+  <!-- HERO -->
+  <section class="hero" aria-label="About hero">
+    <div class="splash-layer" aria-hidden="true">
+      <div class="splash sp1"></div>
+      <div class="splash sp2"></div>
+      <div class="splash sp3"></div>
+      <div class="splash sp4"></div>
+      <div class="splash sp5"></div>
+    </div>
+
+    <div class="hero-content container">
+      <h1 id="typingTitle" style="width:0ch;animation:typing 3.2s steps(50) 0.6s forwards, blink 0.8s step-end infinite">About Skyset Tours</h1>
+      <p>Your journey begins with us. We craft memorable, safe and personalized travel experiences across Kenya, Africa and the world.</p>
+      <div class="breadcrumb"><a href="index.html">Home</a> › About Us</div>
+    </div>
+  </section>
+
+  <main>
+    <section>
+      <h2 class="section-title">Who We Are — Kenya & Africa Travel Experts</h2>
+      <div class="intro">
+        <div class="text">
+          <p class="lead">Skyset Tours and Travel started with a small team passionate about bringing authentic travel experiences to curious explorers. We combine local expertise, trusted partners, and thoughtful planning to create journeys that match your pace, interest, and budget.</p>
+          <p style="text-align:center;margin-top:12px"><a class="cta-btn" href="services.html">Explore Our Services</a></p>
+        </div>
+        <div class="image"><img src="images/victoriafalls.jpg" alt="Victoria Falls travel experience Kenya" loading="lazy"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Mission, Vision & Values</h2>
+      <div class="trio">
+        <div class="card">
+          <h3>Mission</h3>
+          <p>To inspire people to explore the world through safe, sustainable and unforgettable travel experiences in Kenya and Africa.</p>
+        </div>
+        <div class="card">
+          <h3>Vision</h3>
+          <p>To be the most trusted travel partner across Africa and beyond — known for care, reliability and exceptional service.</p>
+        </div>
+        <div class="card">
+          <h3>Values</h3>
+          <p>Integrity • Excellence • Passion • Local Knowledge • Customer-first approach.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">What We Offer</h2>
+      <p class="lead">A preview of our core services — click each card to learn more.</p>
+      <div class="services-row">
+        <div class="service-card"><img src="images/grouptravel.jpg" alt="Tailored group tour packages Kenya" loading="lazy"><div class="service-label">Tailored Tour Packages</div></div>
+        <div class="service-card"><img src="images/hotelbooking.jpg" alt="Hotel and lodging bookings Kenya" loading="lazy"><div class="service-label">Hotels & Lodging</div></div>
+        <div class="service-card"><img src="images/visaassist.jpg" alt="Flight reservations and visa assistance" loading="lazy"><div class="service-label">Flight Reservations</div></div>
+        <div class="service-card"><img src="images/schooltrip.jpg" alt="Transfers and car hire services" loading="lazy"><div class="service-label">Transfers & Car Hire</div></div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Destinations Overview</h2>
+      <p class="lead">We operate across Kenya, Africa and the world — here are a few highlights.</p>
+
+      <div class="dest-row">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <strong>Kenya</strong><a href="destinations.html">Explore Kenya →</a>
+        </div>
+        <div class="dest-track">
+          <div class="dest-card" style="background-image:url('images/tiger.jpg')"><div class="label">Maasai Mara</div></div>
+          <div class="dest-card" style="background-image:url('images/dianibeach.jpg')"><div class="label">Diani Beach</div></div>
+          <div class="dest-card" style="background-image:url('images/mountkenya.jpg')"><div class="label">Mount Kenya</div></div>
+        </div>
+      </div>
+
+      <div class="dest-row" style="margin-top:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <strong>Africa</strong><a href="destinations.html">Explore Africa →</a>
+        </div>
+        <div class="dest-track">
+          <div class="dest-card" style="background-image:url('images/capetown.jpg')"><div class="label">Cape Town</div></div>
+          <div class="dest-card" style="background-image:url('images/istocksafari.jpg')"><div class="label">Serengeti</div></div>
+          <div class="dest-card" style="background-image:url('images/victoriafalls.jpg')"><div class="label">Victoria Falls</div></div>
+        </div>
+      </div>
+
+      <div class="dest-row" style="margin-top:12px">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+          <strong>World</strong><a href="destinations.html">Explore World →</a>
+        </div>
+        <div class="dest-track">
+          <div class="dest-card" style="background-image:url('images/dubai.jpg')"><div class="label">Dubai</div></div>
+          <div class="dest-card" style="background-image:url('images/istocktown.jpg')"><div class="label">Paris</div></div>
+          <div class="dest-card" style="background-image:url('images/london.jpg')"><div class="label">London</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Meet the Team</h2>
+      <div class="team">
+        <div class="member"><img src="https://via.placeholder.com/220x140" alt="Jane Doe - Lead Travel Consultant"><h4>Jane Doe</h4><div style="color:var(--muted)">Lead Travel Consultant</div></div>
+        <div class="member"><img src="https://via.placeholder.com/220x140" alt="John Smith - Senior Guide"><h4>John Smith</h4><div style="color:var(--muted)">Senior Guide</div></div>
+        <div class="member"><img src="https://via.placeholder.com/220x140" alt="Mary Ann - Customer Support"><h4>Mary Ann</h4><div style="color:var(--muted)">Customer Support</div></div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2 class="section-title">Testimonials</h2>
+      <div class="testimonial" id="testiA">"Skyset organised our dream safari — professional, friendly and punctual." — Alex, UK</div>
+      <div class="testimonial" id="testiB" style="display:none">"Best honeymoon planning — every detail was perfect." — Grace, Nairobi</div>
+      <div class="testimonial" id="testiC" style="display:none">"Corporate travel made easy. Efficient service." — Daniel, UAE</div>
+    </section>
+
+    <section>
+      <div class="contact-prompt">
+        <h2 style="margin:0">Ready to start your journey?</h2>
+        <p style="margin-top:8px">Contact Skyset Tours and Travel for tailored itineraries, expert advice and great value.</p>
+        <a class="btn" href="contact.html">Contact Us</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer>
+    <div class="footer-inner container">
+      <div>
+        <div style="font-weight:800;font-size:18px;color:#ffba08">Skyset Tours and Travel Limited</div>
+        <div style="color:#dff7ea;margin-top:6px">Your journey begins with us.</div>
+      </div>
+
+      <div class="footer-links" style="color:#ffba08">
+        <strong>Quick links</strong>
+        <a href="index.html" style="color:#dff7ea">Home</a>
+        <a href="about.html" style="color:#dff7ea">About</a>
+        <a href="services.html" style="color:#dff7ea">Services</a>
+        <a href="destinations.html" style="color:#dff7ea">Destinations</a>
+        <a href="contact.html" style="color:#dff7ea">Contact</a>
+      </div>
+
+      <div>
+        <div style="font-weight:700;color:#ffba08">Contact</div>
+        <div style="margin-top:8px;color:#dff7ea">Email: skysettours@gmail.com</div>
+        <div style="margin-top:6px;color:#dff7ea">WhatsApp: <a href="https://wa.me/254790220876" style="color:#dff7ea">+254 790 220 876</a></div>
+        <div class="social-row" style="margin-top:8px">
+          <!-- Replace # with your actual social URLs -->
+          <a class="soc-fb" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 12a10 10 0 10-11.5 9.9v-7h-2.2V12h2.2V9.6c0-2.2 1.3-3.4 3.3-3.4.96 0 1.97.17 1.97.17v2.2h-1.12c-1.1 0-1.44.68-1.44 1.38V12h2.45l-.39 2.9H13.5v7A10 10 0 0022 12z" fill="#fff"/></svg></a>
+          <a class="soc-ig" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.3A4.7 4.7 0 1016.7 13 4.7 4.7 0 0012 8.3zm4.9-3.6a1.1 1.1 0 11-1.1 1.1 1.1 1.1 0 011.1-1.1z" fill="#fff"/></svg></a>
+          <a class="soc-x" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#000;border-radius:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M23 3a10.9 10.9 0 01-3.14.86A4.48 4.48 0 0022.4.36c-.88.52-1.86.9-2.9 1.11A4.48 4.48 0 0016.1 0c-2.5 0-4.5 2.2-4.5 4.9 0 .38.04.76.12 1.12C7.7 5.86 4.1 3.8 1.67.8c-.42.72-.66 1.56-.66 2.45 0 1.7.8 3.2 2.02 4.07a4.35 4.35 0 01-2.04-.57v.06c0 2.36 1.66 4.33 3.86 4.78-.4.1-.8.14-1.2.14-.3 0-.6 0-.9-.06.6 2 2.32 3.47 4.36 3.51A9 9 0 010 19.54 12.7 12.7 0 006.92 21c8.28 0 12.82-7.1 12.82-13.26 0-.2 0-.39-.02-.58A9.22 9.22 0 0023 3z" fill="#fff"/></svg></a>
+          <a class="soc-yt" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#FF0000;border-radius:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M10 15l5.2-3L10 9v6z" fill="#fff"/></svg></a>
+          <a class="soc-li" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:#0A66C2;border-radius:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20.447 20.452H17.21V14.8c0-1.354-.026-3.095-1.887-3.095-1.889 0-2.178 1.478-2.178 3.003v5.744H9.025V9h3.106v1.561h.043c.433-.82 1.493-1.687 3.071-1.687 3.284 0 3.888 2.162 3.888 4.972v6.606zM5.337 7.433a1.804 1.804 0 11-.002-3.609 1.804 1.804 0 01.002 3.609zM6.984 20.452H3.689V9h3.295v11.452z" fill="#fff"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:16px;color:#dff7ea">© <span id="year"></span> Skyset Tours and Travel Limited. All rights reserved.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const burger = document.getElementById('burger');
+    burger && burger.addEventListener('click', () => {
+      const list = document.getElementById('navList');
+      list.style.display = list.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    const testiA = document.getElementById('testiA');
+    const testiB = document.getElementById('testiB');
+    const testiC = document.getElementById('testiC');
+    let ti = 0;
+    setInterval(()=>{
+      [testiA,testiB,testiC].forEach((el,i)=> el.style.display = i===ti ? 'block' : 'none');
+      ti = (ti + 1) % 3;
+    },5000);
+
+    const cursor = document.getElementById('cursor');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    const hoverables = [...document.querySelectorAll('a, button, .service-card, .member, .cta-btn')];
+    hoverables.forEach(el=>{
+      el.addEventListener('mouseover', ()=> cursor.classList.add('big'));
+      el.addEventListener('mouseout', ()=> cursor.classList.remove('big'));
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        const id = this.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+
+    if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.getElementById('typingTitle').style.animation = 'none';
+    }
+  </script>
+</body>
+</html>
