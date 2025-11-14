@@ -4,13 +4,61 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Skyset Tours and Travel</title>
+
+  <!-- Basic SEO -->
   <meta name="description" content="Skyset Tours and Travel - Explore Kenya, Africa and the world with tailored tours and great service.">
+  <meta name="keywords" content="Skyset Tours, Kenya tours, Africa travel, Safari Kenya, travel agency, travel packages, adventure travel, tour operator, Kenya safaris, luxury travel, family travel, honeymoon trips">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Skyset Tours and Travel">
-  <meta property="og:description" content="Explore Kenya, Africa, and the world with Skyset Tours and Travel Limited. Tailored itineraries and excellent service.">
+  <meta name="author" content="Skyset Tours and Travel Limited">
+  <meta name="language" content="EN">
+  <meta name="distribution" content="global">
+  <meta name="rating" content="general">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:site_name" content="Skyset Tours and Travel Limited">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://skysettours.co.ke">
-  <meta property="og:image" content="images/safari.jpg">
+  <meta property="og:title" content="Skyset Tours and Travel – Explore Kenya, Africa & the World">
+  <meta property="og:description" content="Skyset Tours and Travel provides tailored itineraries, safari adventures, and unforgettable experiences across Kenya, Africa, and beyond.">
+  <meta property="og:image" content="https://skysettours.co.ke/images/safari.jpg">
+  <meta property="og:image:alt" content="Skyset Tours – Safari and travel adventures">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@SkysetTours">
+  <meta name="twitter:title" content="Skyset Tours and Travel – Explore Kenya, Africa & the World">
+  <meta name="twitter:description" content="Skyset Tours and Travel offers tailored safari and travel experiences in Kenya, Africa, and globally.">
+  <meta name="twitter:image" content="https://skysettours.co.ke/images/safari.jpg">
+  <meta name="twitter:image:alt" content="Skyset Tours – Safari and travel adventures">
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    "name": "Skyset Tours and Travel Limited",
+    "url": "https://skysettours.co.ke",
+    "logo": "https://skysettours.co.ke/images/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/SkysetTours",
+      "https://www.instagram.com/SkysetTours",
+      "https://twitter.com/SkysetTours",
+      "https://www.linkedin.com/company/skyset-tours"
+    ],
+    "description": "Skyset Tours and Travel provides personalized tours, safari adventures, and travel services across Kenya, Africa, and the world.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Nairobi",
+      "addressCountry": "Kenya"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+254790220876",
+      "contactType": "Customer Service"
+    }
+  }
+  </script>
 <style>
 
     :root{
@@ -128,20 +176,97 @@
 
     .wa-float{position:fixed;right:18px;bottom:18px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 12px 30px rgba(0,0,0,0.15);z-index:9999}
     .wa-float:hover{transform:translateY(-6px);transition:all .18s ease}
+    footer{
+  padding:28px 0;
+  background:var(--green-dark);
+  color:#e7f3f6;
+}
 
-    footer{padding:28px 0;background:var(--green-dark);color:#e7f3f6}
-    .footer-inner{display:flex;gap:20px;align-items:flex-start;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:0 20px}
-    .footer-links{display:flex;flex-direction:column;gap:8px}
-    .social-row{display:flex;gap:8px;align-items:center}
+/* Layout: footer sections naturally aligned in a row */
+.footer-inner{
+  display:flex;
+  gap:20px;
+  align-items:flex-start;
+  justify-content:space-between;
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 20px;
+  flex-wrap:wrap; /* allow wrapping on smaller screens */
+}
 
-    @media(max-width:900px){
-      .contact-grid{grid-template-columns:1fr}
-      .welcome-grid{flex-direction:column}
-      .service-card{width:100%;max-width:520px}
-      .svc-card, .dest-card{flex:0 0 240px}
-      .strip .tile{flex:0 0 200px;height:120px}
-      .footer-inner{flex-direction:column;gap:12px}
-    }
+/* Remove fixed alignment for social icons */
+.footer-social{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start; /* align naturally with other sections */
+  margin-left:0; /* removed auto margin */
+}
+
+/* Links */
+.footer-links{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+/* Social row */
+.social-row{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap; /* wrap icons on small screens */
+}
+
+/* Social icon sizing */
+.social-row a{
+  width:36px;
+  height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:6px;
+}
+
+/* Platform colors */
+.soc-tt{background:#000}
+.soc-fb{background:#1877F2}
+.soc-ig{background:#E1306C}
+.soc-x{background:#000}
+.soc-yt{background:#FF0000}
+.soc-li{background:#0A66C2}
+
+/* Rights Text — centered at bottom */
+.footer-bottom{
+  text-align:center;
+  margin-top:16px;
+  color:#dff7ea;
+  width:100%;
+}
+
+/* Mobile responsiveness */
+@media(max-width:900px){
+  .contact-grid{grid-template-columns:1fr}
+  .welcome-grid{flex-direction:column}
+  .service-card{width:100%;max-width:520px}
+  .svc-card, .dest-card{flex:0 0 240px}
+  .strip .tile{flex:0 0 200px;height:120px}
+
+  /* Stack footer sections vertically */
+  .footer-inner{
+    flex-direction:column;
+    gap:12px;
+    align-items:flex-start;
+  }
+
+  .footer-social{
+    align-items:flex-start;
+  }
+
+  .social-row{
+    justify-content:flex-start;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -174,10 +299,10 @@
 
   <!-- HERO -->
   <section class="hero" id="home" aria-label="Hero">
-    <video id="collo1" class="active" autoplay muted playsinline src="videos/collo1.mp4"></video>
-    <video id="collo2" muted playsinline src="videos/collo2.mp4"></video>
-    <video id="collo3" muted playsinline src="videos/collo3.mp4"></video>
-    <video id="collo4" muted playsinline src="videos/collo4.mp4"></video>
+    <video id="collo1" class="active" autoplay muted playsinline src="videos/collo1.mp4" alt="Skyset Tours video clip"></video>
+    <video id="collo2" muted playsinline src="videos/collo2.mp4" alt="Skyset Tours video clip"></video>
+    <video id="collo3" muted playsinline src="videos/collo3.mp4" alt="Skyset Tours video clip"></video>
+    <video id="collo4" muted playsinline src="videos/collo4.mp4" alt="Skyset Tours video clip"></video>
     <div class="hero-overlay"></div>
 
     <!-- decorative splashes -->
@@ -192,12 +317,9 @@
     <!-- hero content -->
     <div class="hero-content container">
       <div class="typing" id="typingText">Skyset Tours and Travel</div>
-      <div class="quote" id="slideQuote">Adventure Awaits — Explore the World with Us.</div>
-      <div class="hero-buttons">
-        <a class="cta-btn" href="#destinations">Explore Destinations</a>
-        <a style="background:rgba(255,255,255,0.95);padding:8px 12px;border-radius:8px;font-weight:700;color:var(--green-dark)" href="#services">Our Services</a>
-      </div>
     </div>
+   
+
    </section>
 
   <!-- MAIN CONTENT -->
@@ -249,10 +371,10 @@
         <h2 class="section-title">Our Services</h2>
         <p class="lead">Comprehensive travel services for leisure and corporate travelers.</p>
         <div class="services-row">
-          <div class="service-card"><img src="https://images.unsplash.com/photo-1502920917128-1aa500764b40?auto=format&fit=crop&w=900&q=60" alt=""><div class="service-label">Tour Packages</div></div>
-          <div class="service-card"><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=60" alt=""><div class="service-label">Hotel Booking</div></div>
-          <div class="service-card"><img src="https://images.unsplash.com/photo-1526779259218-3d3b8d9c4f5a?auto=format&fit=crop&w=900&q=60" alt=""><div class="service-label">Flight Reservations</div></div>
-          <div class="service-card"><img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=900&q=60" alt=""><div class="service-label">Car Hire & Transfers</div></div>
+             <div class="service-card"><img src="images/visa.jpg" alt="Air Ticketing"><div class="service-label">Air Ticketing</div></div>
+             <div class="service-card"><img src="images/hotel.jpg" alt="Hotel Reservations"><div class="service-label">Hotel Reservations</div></div>
+             <div class="service-card"><img src="images/schooltrip.jpg" alt="Airport Transfers"><div class="service-label">Airport Transfers</div></div>
+             <div class="service-card"><img src="images/visaassist.jpg" alt="Visa Assistance"><div class="service-label">Visa Assistance</div></div>
         </div>
         <div style="text-align:center;margin-top:12px"><a class="cta-btn" href="services.html">View All Services</a></div>
       </section>
@@ -329,7 +451,7 @@
     <div>
             <div class="card" style="margin-bottom:12px;background:rgba(255,255,255,0.03);color:#fff">
               <strong>Office</strong>
-              <div style="color:rgba(255,255,255,0.9);margin-top:6px">Nairobi, Kenya (address placeholder)</div>
+              <div style="color:rgba(255,255,255,0.9);margin-top:6px">Nairobi, Kenya (vedic house mama Ngina street)</div>
               <div style="margin-top:8px"><strong>Email:</strong> skysettours@gmail.com</div>
               <div style="margin-top:6px"><strong>WhatsApp:</strong> <a href="https://wa.me/254790220876" style="color:#fff">+254 790 220 876</a></div>
             </div>
@@ -372,22 +494,66 @@
         <a href="destinations.html" style="color:#dff7ea">Destinations</a>
         <a href="contact.html" style="color:#dff7ea">Contact</a>
       </div>
-     
-     
-      <div>
-        <div style="font-weight:700;color:#ffba08">Follow Us</div>
-        <div class="social-row" style="margin-top:8px">
-          <a class="soc-fb" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 12a10 10 0 10-11.5 9.9v-7h-2.2V12h2.2V9.6c0-2.2 1.3-3.4 3.3-3.4.96 0 1.97.17 1.97.17v2.2h-1.12c-1.1 0-1.44.68-1.44 1.38V12h2.45l-.39 2.9H13.5v7A10 10 0 0022 12z" fill="#fff"/></svg></a>
-          <a class="soc-ig" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.3A4.7 4.7 0 1016.7 13 4.7 4.7 0 0012 8.3zm4.9-3.6a1.1 1.1 0 11-1.1 1.1 1.1 1.1 0 011.1-1.1z" fill="#fff"/></svg></a>
-          <a class="soc-x" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#000;border-radius:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M23 3a10.9 10.9 0 01-3.14.86A4.48 4.48 0 0022.4.36c-.88.52-1.86.9-2.9 1.11A4.48 4.48 0 0016.1 0c-2.5 0-4.5 2.2-4.5 4.9 0 .38.04.76.12 1.12C7.7 5.86 4.1 3.8 1.67.8c-.42.72-.66 1.56-.66 2.45 0 1.7.8 3.2 2.02 4.07a4.35 4.35 0 01-2.04-.57v.06c0 2.36 1.66 4.33 3.86 4.78-.4.1-.8.14-1.2.14-.3 0-.6 0-.9-.06.6 2 2.32 3.47 4.36 3.51A9 9 0 010 19.54 12.7 12.7 0 006.92 21c8.28 0 12.82-7.1 12.82-13.26 0-.2 0-.39-.02-.58A9.22 9.22 0 0023 3z" fill="#fff"/></svg></a>
-          <a class="soc-yt" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#FF0000;border-radius:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M10 15l5.2-3L10 9v6z" fill="#fff"/></svg></a>
-          <a class="soc-li" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:#0A66C2;border-radius:6px"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20.447 20.452H17.21V14.8c0-1.354-.026-3.095-1.887-3.095-1.889 0-2.178 1.478-2.178 3.003v5.744H9.025V9h3.106v1.561h.043c.433-.82 1.493-1.687 3.071-1.687 3.284 0 3.888 2.162 3.888 4.972v6.606zM5.337 7.433a1.804 1.804 0 11-.002-3.609 1.804 1.804 0 01.002 3.609zM6.984 20.452H3.689V9h3.295v11.452z" fill="#fff"/></svg></a>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:16px;color:#dff7ea">© <span id="year"></span>2025 Skyset Tours and Travel Limited. All rights reserved.</div>
-  </footer>
+  
+    <!-- RIGHT SIDE: SOCIAL ICONS (TOP RIGHT) -->
+    <div class="footer-social">
+      <div style="font-weight:700;color:#ffba08">Follow Us</div>
 
+      <div class="social-row" style="margin-top:8px">
+
+        <!-- Facebook -->
+        <a class="soc-fb" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#1877F2;border-radius:6px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M15 3h-3c-1.7 0-3 .6-3 2.8V9H7v4h2v8h4v-8h2.7L17 9h-4V6.2c0-.8.2-1.2 1.3-1.2H17V3h-2z" fill="#fff"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a class="soc-ig" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#E1306C;border-radius:6px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.3A4.7 4.7 0 1016.7 13 4.7 4.7 0 0012 8.3zm4.9-3.6a1.1 1.1 0 11-1.1 1.1 1.1 1.1 0 011.1-1.1z" fill="#fff"/>
+          </svg>
+        </a>
+
+        <!-- X / Twitter -->
+        <a class="soc-x" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#000;border-radius:6px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M18.9 2H21l-6.3 7.2L22 22h-7.1l-4.6-6.5L4.8 22H2.7l6.7-7.7L2 2h7.2l4.1 5.9L18.9 2z" fill="#fff"/>
+          </svg>
+        </a>
+
+        <!-- YouTube -->
+        <a class="soc-yt" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#FF0000;border-radius:6px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M10 15l5.2-3L10 9v6z" fill="#fff"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="soc-li" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#0A66C2;border-radius:6px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M20.447 20.452H17.21V14.8c0-1.354-.026-3.095-1.887-3.095-1.889 0-2.178 1.478-2.178 3.003v5.744H9.025V9h3.106v1.561h.043c.433-.82 1.493-1.687 3.071-1.687 3.284 0 3.888 2.162 3.888 4.972v6.606zM5.337 7.433a1.804 1.804 0 11-.002-3.609 1.804 1.804 0 01.002 3.609zM6.984 20.452H3.689V9h3.295v11.452z" fill="#fff"/>
+          </svg>
+        </a>
+
+        <!-- TikTok -->
+        <a class="soc-tt" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:#000;border-radius:6px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M16.5 2c.3 1.6 1.4 2.9 3 3.2v3.1c-1.2 0-2.4-.4-3.4-1.1v7.3c0 3.5-2.9 6.3-6.5 6.3S3 18 3 14.5 5.9 8.2 9.5 8.2c.5 0 1 .1 1.5.2v3.3c-.5-.2-1-.3-1.5-.3-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3V2h4z" fill="#fff"/>
+          </svg>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- BOTTOM CENTERED RIGHTS TEXT -->
+  <div class="footer-bottom" style="text-align:center;margin-top:16px;color:#dff7ea">
+    © <span id="year"></span>2025 Skyset Tours and Travel Limited. All rights reserved.
+  </div>
+</footer>
 
   <script>
 
@@ -424,11 +590,12 @@
     },10000);
  
    // destinations arrows
-    function scrollDest(id, dir){
-      const track = document.getElementById(id);
-      const cardW = track.querySelector('.dest-card').getBoundingClientRect().width + 10;
-      track.scrollBy({left: dir * cardW, behavior: 'smooth'});
-    }
+     function scrollDest(id, dir){
+  const track = document.getElementById(id);
+  const cardW = track.querySelector('.dest-card').getBoundingClientRect().width + 10;
+  track.scrollBy({left: dir * cardW, behavior: 'smooth'});
+}
+
  
   // testimonials rotate
     const testiEls = [document.getElementById('testi1'), document.getElementById('testi2'), document.getElementById('testi3')];
