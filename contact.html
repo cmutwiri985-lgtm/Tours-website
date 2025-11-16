@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us - SKYSET Tours and Travel limited</title>
+  <link rel="canonical" href="https://skysettours.co.ke/contact.html">
 
   <!-- ✅ SEO Meta Tags -->
   <meta name="description" content="Contact SKYSET Tours and Travel for custom tour packages, flight bookings, and travel assistance. Reach us via phone, email, or WhatsApp — your next adventure starts here!">
@@ -34,8 +35,8 @@
     "email": "info@skysettravel.co.ke",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Mavuria",
-      "addressLocality": "Embu County",
+      "streetAddress": "Nairobi",
+      "addressLocality": "Nairobi County",
       "addressCountry": "KE"
     },
     "openingHours": "Mo-Sa 08:00-18:00",
@@ -73,15 +74,50 @@
     }
     .cursor.big{width:46px;height:46px;background:rgba(244,193,80,0.12);}
 
+    
     /* ---------- NAVBAR ---------- */
-    header.nav{
-      position:fixed;left:0;right:0;top:0;z-index:9998;
-      background:linear-gradient(90deg,var(--green-dark), var(--green-light));
-      color:#fff;padding:10px 0;box-shadow:0 6px 18px rgba(4,73,39,0.12);backdrop-filter: blur(4px);
-    }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:6px 20px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--gold),#ffc85a);display:flex;align-items:center;justify-content:center;color:var(--green-dark);font-weight:800;font-size:16px}
+  header.nav {
+  position: fixed; left: 0; right: 0; top: 0; z-index: 9998;
+  background: linear-gradient(90deg, var(--green-dark), var(--green-light));
+  color: #fff;
+  padding: 10px 0;
+  box-shadow: 0 6px 18px rgba(4, 73, 39, 0.12);
+  backdrop-filter: blur(4px);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 6px 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* FIXED LOGO , LEFT-SIDE, CLEAN DISPLAY */
+.logo {
+  width: 80px;
+  height: 60px;               /* Circle requires equal width + height */
+  background-size: cover;      /* makes the content fill the circle more naturally */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 50%;          /* makes it a perfect circle */
+  overflow: hidden;            /* trims the image inside the circle */
+
+  /* Slight curved effect inside */
+  mask-image: radial-gradient(circle 85% at center, black 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle 85% at center, black 70%, transparent 100%);
+}
+
+
+
     .site-name{font-weight:800;font-size:18px}
     nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
     nav a{padding:8px 12px;border-radius:8px;color:#fff;font-weight:700;transition:all .18s}
@@ -246,29 +282,29 @@
 </head>
 
 <body>
-  <!-- cursor -->
+   <!-- cursor -->
   <div class="cursor" id="cursor"></div>
 
   <!-- NAVBAR -->
   <header class="nav">
     <div class="nav-inner container">
       <div class="brand">
-        <div class="logo">ST</div>
+        <div class="logo"> <div class="logo" style="background-image:url('images/logo.png')"></div>
+</div>
         <div>
-          <div class="site-name">Skyset Tours and Travel</div>
+          <div class="site-name">Skyset Tours and Travel Limited</div>
           <div style="font-size:12px;color:rgba(255,255,255,0.9)">Explore • Dream • Discover</div>
         </div>
       </div>
       <nav>
         <div class="hamburger" id="burger">☰</div>
         <ul id="navList">
-         
           <li><a href="index.html" class="nav-link active" data-target="home">Home</a></li>
           <li><a href="about.html" class="nav-link" data-target="about">About Us</a></li>
           <li><a href="services.html" class="nav-link" data-target="services">Services</a></li>
           <li><a href="destinations.html" class="nav-link" data-target="destinations">Destinations</a></li>
           <li><a href="contact.html" class="nav-link" data-target="contact">Contact</a></li>
-          
+          <li><a class="cta-btn" href="contact.html">Book Now</a></li>
         </ul>
       </nav>
     </div>
@@ -301,7 +337,8 @@
         <p>Mon – Sat: 8:00 AM – 6:00 PM<br>Sunday: Closed</p>
       </div>
 
-      <form class="contact-form" action="https://formspree.io/f/mzzybayr" method="POST">
+      <form class="contact-form" action="send.php" method="POST" id="contactForm">
+
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
 
@@ -312,7 +349,9 @@
         <textarea id="message" name="message" required></textarea>
 
         <button class="send-btn" type="submit">Send Message</button>
-      </form>
+        
+      <p id="formMessage" style="margin-top:10px;color:#ffd700;"></p>
+</form>
     </div>
   </section>
 
@@ -427,7 +466,7 @@
 
   <!-- BOTTOM CENTERED RIGHTS TEXT -->
   <div class="footer-bottom" style="text-align:center;margin-top:16px;color:#dff7ea">
-    © <span id="year"></span>2025 Skyset Tours and Travel Limited. All rights reserved.
+    © <span id="year"></span> Skyset Tours and Travel Limited. All rights reserved.
   </div>
 </footer>
   <script>
@@ -456,6 +495,25 @@
 
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+
+const form = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const formData = new FormData(form);
+  const response = await fetch('send.php', {
+    method: 'POST',
+    body: formData
+  });
+  const text = await response.text();
+  formMessage.textContent = text;
+  form.reset();
+});
+
+
+
+</script>
+
 </body>
 </html>

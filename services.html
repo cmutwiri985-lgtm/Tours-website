@@ -6,6 +6,7 @@
 <meta name="description" content="Skyset Tours and Travel Limited offers flight bookings, hotel reservations, holiday packages, and visa assistance to create unforgettable travel experiences.">
 <meta name="keywords" content="Travel, Tours, Flight Booking, Hotel Reservation, Holiday Packages, Visa Assistance, Kenya Travel, Skyset Tours">
 <title>Services | Skyset Tours and Travel Limited</title>
+<link rel="canonical" href="https://skysettours.co.ke/services.html">
 <style>
 :root{
   --green-dark:#004c99;
@@ -26,28 +27,61 @@ body {background-color:#f8fff8; color:#333;}
 }
 .cursor.big{width:46px;height:46px;background:rgba(244,193,80,0.12);}
 
-/* Navbar */
-header.nav{
-  position:fixed;left:0;right:0;top:0;z-index:9998;
-  background:linear-gradient(90deg,var(--green-dark), var(--green-light));
-  color:#fff;padding:10px 0;box-shadow:0 6px 18px rgba(4,73,39,0.12);backdrop-filter: blur(4px);
-}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:6px 20px}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--gold),#ffc85a);display:flex;align-items:center;justify-content:center;color:var(--green-dark);font-weight:800;font-size:16px}
-.site-name{font-weight:800;font-size:18px}
-nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
-nav a{padding:8px 12px;border-radius:8px;color:#fff;font-weight:700;transition:all .18s}
-nav a:hover{background:rgba(255,255,255,0.08);color:var(--gold)}
-nav a.active{background:rgba(255,255,255,0.12);box-shadow:inset 0 -3px 0 rgba(0,0,0,0.06)}
-.cta-btn{background:var(--gold);color:var(--green-dark);padding:8px 12px;border-radius:8px;font-weight:800}
-.hamburger{display:none;cursor:pointer}
-@media(max-width:920px){
-  nav ul{display:none;position:absolute;top:64px;right:18px;background:#fff;color:var(--green-dark);padding:12px;border-radius:12px;box-shadow:0 10px 30px rgba(3,37,51,0.12);flex-direction:column;}
-  nav ul a{color:var(--green-dark);display:block;padding:10px 12px}
-  .hamburger{display:block}
+ /* ---------- NAVBAR ---------- */
+  header.nav {
+  position: fixed; left: 0; right: 0; top: 0; z-index: 9998;
+  background: linear-gradient(90deg, var(--green-dark), var(--green-light));
+  color: #fff;
+  padding: 10px 0;
+  box-shadow: 0 6px 18px rgba(4, 73, 39, 0.12);
+  backdrop-filter: blur(4px);
 }
 
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 6px 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* FIXED LOGO , LEFT-SIDE, CLEAN DISPLAY */
+.logo {
+  width: 80px;
+  height: 60px;               /* Circle requires equal width + height */
+  background-size: cover;      /* makes the content fill the circle more naturally */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 50%;          /* makes it a perfect circle */
+  overflow: hidden;            /* trims the image inside the circle */
+
+  /* Slight curved effect inside */
+  mask-image: radial-gradient(circle 85% at center, black 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle 85% at center, black 70%, transparent 100%);
+}
+
+
+
+    .site-name{font-weight:800;font-size:18px}
+    nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
+    nav a{padding:8px 12px;border-radius:8px;color:#fff;font-weight:700;transition:all .18s}
+    nav a:hover{background:rgba(255,255,255,0.08);color:var(--gold)}
+    nav a.active{background:rgba(255,255,255,0.12);box-shadow:inset 0 -3px 0 rgba(0,0,0,0.06)}
+    .cta-btn{background:var(--gold);color:var(--green-dark);padding:8px 12px;border-radius:8px;font-weight:800}
+    .hamburger{display:none;cursor:pointer}
+    @media(max-width:920px){
+      nav ul{display:none;position:absolute;top:64px;right:18px;background:#fff;color:var(--green-dark);padding:12px;border-radius:12px;box-shadow:0 10px 30px rgba(3,37,51,0.12);flex-direction:column;}
+      nav ul a{color:var(--green-dark);display:block;padding:10px 12px}
+      .hamburger{display:block}
+    }
 /* Hero Section */
 .hero {
   background:url('images/services.jpg') no-repeat center/cover;
@@ -229,32 +263,33 @@ section p {color:#333; margin-bottom:30px;}
 </style>
 </head>
 <body>
-<!-- Cursor -->
-<div class="cursor" id="cursor"></div>
+<!-- cursor -->
+  <div class="cursor" id="cursor"></div>
 
-<!-- NAVBAR -->
-<header class="nav">
-  <div class="nav-inner container">
-    <div class="brand">
-      <div class="logo">ST</div>
-      <div>
-        <div class="site-name">Skyset Tours and Travel Limited</div>
-        <div style="font-size:12px;color:rgba(255,255,255,0.9)">Explore • Dream • Discover</div>
+  <!-- NAVBAR -->
+  <header class="nav">
+    <div class="nav-inner container">
+      <div class="brand">
+        <div class="logo"> <div class="logo" style="background-image:url('images/logo.png')"></div>
+</div>
+        <div>
+          <div class="site-name">Skyset Tours and Travel Limited</div>
+          <div style="font-size:12px;color:rgba(255,255,255,0.9)">Explore • Dream • Discover</div>
+        </div>
       </div>
+      <nav>
+        <div class="hamburger" id="burger">☰</div>
+        <ul id="navList">
+          <li><a href="index.html" class="nav-link active" data-target="home">Home</a></li>
+          <li><a href="about.html" class="nav-link" data-target="about">About Us</a></li>
+          <li><a href="services.html" class="nav-link" data-target="services">Services</a></li>
+          <li><a href="destinations.html" class="nav-link" data-target="destinations">Destinations</a></li>
+          <li><a href="contact.html" class="nav-link" data-target="contact">Contact</a></li>
+          <li><a class="cta-btn" href="contact.html">Book Now</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <div class="hamburger" id="burger">☰</div>
-      <ul id="navList">
-        <li><a href="index.html" class="nav-link active" data-target="home">Home</a></li>
-        <li><a href="about.html" class="nav-link" data-target="about">About Us</a></li>
-        <li><a href="services.html" class="nav-link" data-target="services">Services</a></li>
-        <li><a href="destinations.html" class="nav-link" data-target="destinations">Destinations</a></li>
-        <li><a href="contact.html" class="nav-link" data-target="contact">Contact</a></li>
-        <li><a class="cta-btn" href="contact.html">Book Now</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  </header>
 
 <!-- Hero -->
 <div class="hero">
@@ -388,7 +423,7 @@ section p {color:#333; margin-bottom:30px;}
 
   <!-- BOTTOM CENTERED RIGHTS TEXT -->
   <div class="footer-bottom" style="text-align:center;margin-top:16px;color:#dff7ea">
-    © <span id="year"></span>2025 Skyset Tours and Travel Limited. All rights reserved.
+    © <span id="year"></span> Skyset Tours and Travel Limited. All rights reserved.
   </div>
 </footer>
 

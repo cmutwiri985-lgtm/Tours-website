@@ -5,7 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>About Us — Skyset Tours and Travel Limited | Kenya & Africa Travel Experts</title>
-  <meta name="description" content="Learn about Skyset Tours and Travel — our mission, vision, values, expert team, and tailored Kenya & Africa travel services."/>
+  <link rel="canonical" href="https://skysettours.co.ke/about.html">
+<meta name="description" content="Learn about Skyset Tours and Travel — our mission, vision, values, expert team, and tailored Kenya & Africa travel services."/>
   <style>
     :root{
       --green-dark:#004c99;
@@ -33,15 +34,50 @@
     }
     .cursor.big{width:46px;height:46px;background:rgba(244,193,80,0.12);}
 
+    
     /* ---------- NAVBAR ---------- */
-    header.nav{
-      position:fixed;left:0;right:0;top:0;z-index:9998;
-      background:linear-gradient(90deg,var(--green-dark), var(--green-light));
-      color:#fff;padding:10px 0;box-shadow:0 6px 18px rgba(4,73,39,0.12);backdrop-filter: blur(4px);
-    }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--maxw);margin:0 auto;padding:6px 20px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--gold),#ffc85a);display:flex;align-items:center;justify-content:center;color:var(--green-dark);font-weight:800;font-size:16px}
+  header.nav {
+  position: fixed; left: 0; right: 0; top: 0; z-index: 9998;
+  background: linear-gradient(90deg, var(--green-dark), var(--green-light));
+  color: #fff;
+  padding: 10px 0;
+  box-shadow: 0 6px 18px rgba(4, 73, 39, 0.12);
+  backdrop-filter: blur(4px);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 6px 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* FIXED LOGO , LEFT-SIDE, CLEAN DISPLAY */
+.logo {
+  width: 80px;
+  height: 60px;               /* Circle requires equal width + height */
+  background-size: cover;      /* makes the content fill the circle more naturally */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-radius: 50%;          /* makes it a perfect circle */
+  overflow: hidden;            /* trims the image inside the circle */
+
+  /* Slight curved effect inside */
+  mask-image: radial-gradient(circle 85% at center, black 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle 85% at center, black 70%, transparent 100%);
+}
+
+
+
     .site-name{font-weight:800;font-size:18px}
     nav ul{display:flex;gap:18px;align-items:center;margin:0;padding:0;list-style:none}
     nav a{padding:8px 12px;border-radius:8px;color:#fff;font-weight:700;transition:all .18s}
@@ -54,6 +90,7 @@
       nav ul a{color:var(--green-dark);display:block;padding:10px 12px}
       .hamburger{display:block}
     }
+
 
     /* ---------- HERO (static image) ---------- */
     .hero{
@@ -252,17 +289,17 @@
   <!-- cursor -->
   <div class="cursor" id="cursor"></div>
 
-  <!-- NAV -->
+  <!-- NAVBAR -->
   <header class="nav">
     <div class="nav-inner container">
       <div class="brand">
-        <div class="logo">ST</div>
+        <div class="logo"> <div class="logo" style="background-image:url('images/logo.png')"></div>
+</div>
         <div>
           <div class="site-name">Skyset Tours and Travel Limited</div>
           <div style="font-size:12px;color:rgba(255,255,255,0.9)">Explore • Dream • Discover</div>
         </div>
       </div>
-
       <nav>
         <div class="hamburger" id="burger">☰</div>
         <ul id="navList">
@@ -275,7 +312,7 @@
         </ul>
       </nav>
     </div>
-  </header> 
+  </header>
 
   <!-- HERO -->
   <section class="hero" aria-label="About hero">
@@ -478,7 +515,7 @@
 
   <!-- BOTTOM CENTERED RIGHTS TEXT -->
   <div class="footer-bottom" style="text-align:center;margin-top:16px;color:#dff7ea">
-    © <span id="year"></span>2025 Skyset Tours and Travel Limited. All rights reserved.
+    © <span id="year"></span> Skyset Tours and Travel Limited. All rights reserved.
   </div>
 </footer>
 
@@ -490,7 +527,7 @@
     burger && burger.addEventListener('click', () => {
       const list = document.getElementById('navList');
       list.style.display = list.style.display === 'flex' ? 'none' : 'flex';
-    });
+    });	
 
     const testiA = document.getElementById('testiA');
     const testiB = document.getElementById('testiB');
