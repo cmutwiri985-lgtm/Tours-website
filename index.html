@@ -169,11 +169,19 @@
       --bg:#fffcef;
       --maxw:1200px;
     }
-    *{box-sizing:border-box;}
-    html,body{height:100%;margin:0;font-family:Inter, "Segoe UI", Roboto, Arial, sans-serif;background:var(--bg);color:#fffcef;-webkit-font-smoothing:antialiased;}
-    a{color:inherit;text-decoration:none;}
-    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family:'poppins', sans-serif;
+}
 
+  body {
+      background: #f5faff;
+      color: #222;
+      line-height: 1.6;
+      scroll-behaviour: smooth;
+}
     /* ---------- Cursor ---------- */
     .cursor{
       position:fixed;left:0;top:0;width:14px;height:14px;border-radius:50%;pointer-events:none;z-index:99999;
@@ -299,21 +307,95 @@
     .testi-wrap{display:flex;gap:12px;align-items:center;justify-content:center;flex-wrap:wrap}
     .testi{background:#fff;padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(3,37,51,0.04);flex:1;min-width:260px}
     .testi p{font-style:italic;color:var(--muted)}
+.contact-section {
+    position: relative;
+    padding: 48px 0;
+    border-radius: 12px;
+    color: #fff;
 
-    .contact-section{background:linear-gradient(90deg,var(--green-dark),var(--green-light));padding:48px 0;border-radius:12px;color:#fff}
-    .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:22px;max-width:1100px;margin:0 auto}
-    .contact-form{background:rgba(255,255,255,0.06);padding:18px;border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,0.02)}
-    label{display:block;margin:8px 0 6px;font-weight:700;font-size:13px;color:#fff}
-    input[type=text], input[type=email], textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);font-size:14px;background:rgba(255,255,255,0.03);color:#fff}
-    textarea{min-height:140px;resize:vertical}
-    .send-btn{background:var(--gold);color:var(--green-dark);padding:10px 14px;border-radius:8px;border:0;font-weight:800;cursor:pointer;margin-top:10px}
+    /* Background image */
+    background: 
+        url("images/form5.png")
+        center/cover no-repeat;
+}
+
+/* Overlay to improve readability */
+.contact-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+
+    /* Semi-transparent gradient overlay */
+    background: linear-gradient(
+        90deg, 
+        rgba(0, 0, 0, 0.55), 
+        rgba(0, 0, 0, 0.45)
+    );
+
+    pointer-events: none; /* keep content clickable */
+}
+
+.contact-grid {
+    position: relative; /* so it appears above the overlay */
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 22px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+label {
+    display: block;
+    margin: 8px 0 6px;
+    font-weight: 700;
+    font-size: 13px;
+    color: #fff;
+}
+
+input[type=text],
+input[type=email],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+}
+
+textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.send-btn {
+    background: var(--gold);
+    color: var(--green-dark);
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 0;
+    font-weight: 800;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
 
     .wa-float{position:fixed;right:18px;bottom:18px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 12px 30px rgba(0,0,0,0.15);z-index:9999}
     .wa-float:hover{transform:translateY(-6px);transition:all .18s ease}
     footer{
   padding:28px 0;
   background:var(--green-dark);
-  color:#e7f3f6;
+  color:#oa2472;
 }
 
 /* Layout: footer sections naturally aligned in a row */
@@ -326,6 +408,7 @@
   margin:0 auto;
   padding:0 20px;
   flex-wrap:wrap; /* allow wrapping on smaller screens */
+
 }
 
 /* Remove fixed alignment for social icons */
@@ -457,12 +540,17 @@
   <main>
     <div class="container">
 
-      <!-- WELCOME -->
-      <section id="welcome">
-        <h2 class="section-title">Welcome to Skyset Tours and Travel</h2>
-        <p class="lead">At Skyset, we turn your travel dreams into reality — whether it's a safari in Kenya, a city break in Europe, or a tropical island escape. Our team crafts personalized itineraries and handles every detail so you can focus on making memories.</p>
-        <div style="text-align:center;margin-top:18px"><a class="cta-btn" href="about.html">Learn More About Us</a></div>
-      </section>
+      <!-- WELCOME --><section id="welcome">
+   <section id="welcome">
+    <h2 class="section-title">Welcome to Skyset Tours and Travel</h2>
+    <p class="lead">
+      <strong>At Skyset, we turn your travel dreams into reality — whether it's a safari in Kenya, a city break in Europe, or a tropical island escape. Our team crafts personalized itineraries and handles every detail so you can focus on making memories.</strong>
+    </p>
+    
+
+   <div style="text-align:center;margin-top:18px"><a class="cta-btn" href="about.html">Learn More About Us</a></div>
+
+</section>
 
       <!-- SCROLLING STRIP -->
      <section>
@@ -488,7 +576,8 @@
  <!-- WHY CHOOSE US -->
       <section>
         <h2 class="section-title">Why Choose Us</h2>
-        <p class="lead">We blend local knowledge with global standards — delivering safe, affordable and unforgettable travel experiences designed just for you.</p>
+        <p class="lead">
+         <strong>We blend local knowledge with global standards — delivering safe, affordable and unforgettable travel experiences designed just for you.</strong></p>
         <div class="why-grid">
           <div class="card"><div style="font-size:22px">🧭</div><div style="margin-top:8px;font-weight:800">Expert Local Guides</div><div style="color:var(--muted);margin-top:8px">Knowledgeable professionals who know each destination intimately.</div></div>
           <div class="card"><div style="font-size:22px">💼</div><div style="margin-top:8px;font-weight:800">Tailored Itineraries</div><div style="color:var(--muted);margin-top:8px">Custom trips built around your interests, budget and timeline.</div></div>
@@ -500,7 +589,8 @@
        <!-- SERVICES (images with overlayed text) -->
       <section id="services">
         <h2 class="section-title">Our Services</h2>
-        <p class="lead">Comprehensive travel services for leisure and corporate travelers.</p>
+        <p class="lead">
+        <strong>Comprehensive travel services for leisure and corporate travelers.</strong></p>
         <div class="services-row">
              <div class="service-card"><img src="images/visa.jpg" alt="Air Ticketing"><div class="service-label">Air Ticketing</div></div>
              <div class="service-card"><img src="images/hotel.jpg" alt="Hotel Reservations"><div class="service-label">Hotel Reservations</div></div>
@@ -513,11 +603,12 @@
      <!-- DESTINATIONS -->
       <section id="destinations">
         <h2 class="section-title">Top Destinations</h2>
-        <p class="lead">Explore our featured destinations by region — click arrows to navigate and explore more.</p>
+        <p class="lead">
+        <strong>Explore our featured destinations by region — click arrows to navigate and explore more.</strong></p>
         <div class="dest-sections">
           <!-- Kenya -->
           <div class="dest-row">
-            <div class="dest-arrow"><strong>Kenya</strong><a href="destinations.html"> Explore Kenya →</a></div>
+            <div class="dest-arrow"><strong>Kenya</strong><a href="kenya.html"> Explore Kenya →</a></div>
             <div class="dest-track" id="kenya">
               <div class="dest-card" style="background-image:url('images/safari.jpg')"><div class="label">Maasai Mara</div></div>
               <div class="dest-card" style="background-image:url('images/snow.jpg')"><div class="label">Diani Beach</div></div>
@@ -528,7 +619,7 @@
 
       <!-- Africa -->
           <div class="dest-row">
-            <div class="dest-arrow"><strong>Africa</strong><a href="destinations.html"> Explore Africa →</a></div>
+            <div class="dest-arrow"><strong>Africa</strong><a href="africa.html"> Explore Africa →</a></div>
             <div class="dest-track" id="africa">
               <div class="dest-card" style="background-image:url('images/capetown.jpg')"><div class="label">Cape Town</div></div>
               <div class="dest-card" style="background-image:url('images/tiger.jpg')"><div class="label">Serengeti</div></div>
@@ -539,7 +630,7 @@
 
           <!-- World -->
           <div class="dest-row">
-            <div class="dest-arrow"><strong>World</strong><a href="destinations.html"> Explore World →</a></div>
+            <div class="dest-arrow"><strong>World</strong><a href="world.html"> Explore World →</a></div>
             <div class="dest-track" id="world">
               <div class="dest-card" style="background-image:url('images/dubai.jpg')"><div class="label">Dubai</div></div>
               <div class="dest-card" style="background-image:url('images/snow.jpg')"><div class="label">Paris</div></div>
@@ -559,49 +650,51 @@
           <div class="testi" id="testi3" style="display:none"><p>"Professional corporate travel support; punctual and efficient."</p><div style="font-weight:800;margin-top:8px">— Ravi M., India</div></div>
         </div>
 
- <!-- CONTACT SECTION (gradient) -->
-      <section class="contact-section" id="contact">
-        <h2 class="section-title" style="color:#fff">Get in Touch With Us</h2>
-        <p class="lead" style="color:#e8fff0">Have questions or ready to book? Send us a message — we’ll get back quickly.</p>
+ <!-- <!-- Contact Info & Form -->
+  <section class="contact-section" id="contact">
+    <h2 class="section-title" style="color:#fff;text-align:center;">Get in Touch With Us</h2>
+    <strong><p class="lead" style="color:#fff;text-align:center;">Have questions or ready to book? Send us a message — we’ll get back quickly.</p></strong>
 
-        <div>
-          <form class="contact-form" action="https://formspree.io/f/mzzybayr" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button class="send-btn" type="submit">Send Message</button>
-          </form>
-        </div>
+    <div class="contact-grid container">
+      <div class="info-box">
+        <h2><i class="fas fa-map-marker-alt"></i> Our Office</h2>
+        <p>SKYSET Travel, Kenya,Nairobi(vedic house mama Ngina street)</p>
 
-    <div>
-            <div class="card" style="margin-bottom:12px;background:rgba(255,255,255,0.03);color:#fff">
-              <strong>Office</strong>
-              <div style="color:rgba(255,255,255,0.9);margin-top:6px">Nairobi, Kenya (vedic house mama Ngina street)</div>
-              <div style="margin-top:8px"><strong>Email:</strong> skysettours@gmail.com</div>
-              <div style="margin-top:6px"><strong>WhatsApp:</strong> <a href="https://wa.me/254790220876" style="color:#fff">+254 790 220 876</a></div>
-            </div>
+        <div style="color:#dff7ea">
+     <h2><i class="fas fa-phone"></i> Call / WhatsApp</h2>
+    <p><a href="https://wa.me/254 790220876" target="_blank" style="color:#dff7ea; text-decoration:underline;">
+      +254 790 220 876
+    </a></p>
+  </div>
+      
+       <div style="color:#dff7ea">
+     <h2><i class="fas fa-envelope"></i> Email</h2>
+   <p> <a href="mailto:info@skysettours.co.ke" style="color:#dff7ea; text-decoration:underline;">
+      info@skysettours.co.ke
+    </a></p>
+  </div>
+        <h2><i class="fas fa-clock"></i> Working Hours</h2>
+        <p>Mon – Sat: 8:00 AM – 6:00 PM<br>Sunday: Closed</p>
+      </div>
 
-            <div class="card" style="background:rgba(255,255,255,0.03);color:#fff">
-              <strong>Quick Links</strong>
-              <div style="margin-top:8px" class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="services.html">Services</a>
-                <a href="destinations.html">Destinations</a>
-                <a href="contact.html">Contact</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <form class="contact-form" action="send.php" method="POST" id="contactForm">
 
-    </div><!-- container -->
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button class="send-btn" type="submit">Send Message</button>
+        
+      <p id="formMessage" style="margin-top:10px;color:#ffd700;"></p>
+</form>
+    </div>
+  </section>
+
   </main>
 
    <!-- floating whatsapp -->
@@ -611,84 +704,132 @@
   
   <!-- FOOTER (solid blue) -->
   <footer>
-    <div class="footer-inner container">
-      <div>
-        <div style="font-weight:800;font-size:18px;color:#ffba08">Skyset Tours and Travel Limited</div>
-        <div style="color:#dff7ea;margin-top:6px">Your journey begins with us.</div>
-      </div>
+  <div class="footer-inner container">
 
-      <div class="footer-links" style="color:#ffba08">
-       <strong>Quick Links</strong>
-        <a href="index.html" style="color:#dff7ea">Home</a>
-        <a href="about.html" style="color:#dff7ea">About</a>
-        <a href="services.html" style="color:#dff7ea">Services</a>
-        <a href="destinations.html" style="color:#dff7ea">Destinations</a>
-        <a href="contact.html" style="color:#dff7ea">Contact</a>
-      </div>
-  
-    <!-- RIGHT SIDE: SOCIAL ICONS (TOP RIGHT) -->
+    <!-- COMPANY NAME -->
+    <div>
+      <div style="font-weight:800;font-size:18px;color:#ffba08">Skyset Tours and Travel Limited</div>
+      <div style="color:#dff7ea;margin-top:6px">Your journey begins with us.</div>
+      <div style="font-weight:800;font-size:18px;color:#ffba08">About Skyset</div>
+      <div style="color:#dff7ea;margin-top:6px">Travel smart. Travel safe. Travel with SKYSET.</div>
+      <div style="font-weight:800;font-size:18px;color:#ffba08">Explore • Dream • Discover</div>
+ </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-links" style="color:#ffba08">
+      <strong>Quick Links</strong>
+      <a href="about.html" style="color:#dff7ea">About</a>
+      <a href="services.html" style="color:#dff7ea">Services</a>
+      <a href="destinations.html" style="color:#dff7ea">Destinations</a>
+      <a href="contact.html" style="color:#dff7ea">Contact</a>
+    </div>
+
+    <!-- SOCIAL ICONS -->
     <div class="footer-social">
       <div style="font-weight:700;color:#ffba08">Follow Us</div>
 
       <div class="social-row" style="margin-top:8px">
+        <!-- (ALL YOUR SOCIAL ICONS EXACTLY AS YOU HAD THEM) -->
+       <!-- Facebook -->
+<a class="soc-fb" href="https://www.facebook.com/share/14SK1QvP9FJ/ " target="_blank" rel="noopener noreferrer" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#1877F2;border-radius:6px">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+    <path d="M15 3h-3c-1.7 0-3 .6-3 2.8V9H7v4h2v8h4v-8h2.7L17 9h-4V6.2c0-.8.2-1.2 1.3-1.2H17V3h-2z" fill="#fff"/>
+  </svg>
+</a>
 
-        <!-- Facebook -->
-        <a class="soc-fb" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#1877F2;border-radius:6px">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M15 3h-3c-1.7 0-3 .6-3 2.8V9H7v4h2v8h4v-8h2.7L17 9h-4V6.2c0-.8.2-1.2 1.3-1.2H17V3h-2z" fill="#fff"/>
-          </svg>
-        </a>
+<!-- Instagram -->
+<a class="soc-ig" 
+   href="https://www.instagram.com/skysettourstravel?utm_source=qr&igsh=MTVtcmQ0Z2M5ZGVw
+" 
+   target="_blank" 
+   rel="noopener noreferrer"
+   style="width:36px; height:36px; display:flex; align-items:center; justify-content:center; margin-right:6px; background:#E1306C; border-radius:6px;">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+    <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.3A4.7 4.7 0 1016.7 13 4.7 4.7 0 0012 8.3zm4.9-3.6a1.1 1.1 0 11-1.1 1.1 1.1 1.1 0 011.1-1.1z" fill="#fff"/>
+  </svg>
+</a>
 
-        <!-- Instagram -->
-        <a class="soc-ig" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#E1306C;border-radius:6px">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M7 2h10a5 5 0 015 5v10a5 5 0 01-5 5H7a5 5 0 01-5-5V7a5 5 0 015-5zm5 6.3A4.7 4.7 0 1016.7 13 4.7 4.7 0 0012 8.3zm4.9-3.6a1.1 1.1 0 11-1.1 1.1 1.1 1.1 0 011.1-1.1z" fill="#fff"/>
-          </svg>
-        </a>
+<!-- X / Twitter -->
+<a class="soc-x" href="https://x.com/skyset_tours?t=JcTvAXUcudO0ca8ykbkrIQ&s=03" target="_blank" rel="noopener noreferrer" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#000;border-radius:6px">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+    <path d="M18.9 2H21l-6.3 7.2L22 22h-7.1l-4.6-6.5L4.8 22H2.7l6.7-7.7L2 2h7.2l4.1 5.9L18.9 2z" fill="#fff"/>
+  </svg>
+</a>
 
-        <!-- X / Twitter -->
-        <a class="soc-x" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#000;border-radius:6px">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M18.9 2H21l-6.3 7.2L22 22h-7.1l-4.6-6.5L4.8 22H2.7l6.7-7.7L2 2h7.2l4.1 5.9L18.9 2z" fill="#fff"/>
-          </svg>
-        </a>
+<!-- YouTube -->
+<a class="soc-yt" href="#" target="_blank" rel="noopener noreferrer" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#FF0000;border-radius:6px">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+    <path d="M10 15l5.2-3L10 9v6z" fill="#fff"/>
+  </svg>
+</a>
 
-        <!-- YouTube -->
-        <a class="soc-yt" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#FF0000;border-radius:6px">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M10 15l5.2-3L10 9v6z" fill="#fff"/>
-          </svg>
-        </a>
+<!-- LinkedIn -->
+<a class="soc-li" href="#" target="_blank" rel="noopener noreferrer" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#0A66C2;border-radius:6px">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+    <path d="M20.447 20.452H17.21V14.8c0-1.354-.026-3.095-1.887-3.095-1.889 0-2.178 1.478-2.178 3.003v5.744H9.025V9h3.106v1.561h.043c.433-.82 1.493-1.687 3.071-1.687 3.284 0 3.888 2.162 3.888 4.972v6.606zM5.337 7.433a1.804 1.804 0 11-.002-3.609 1.804 1.804 0 01.002 3.609zM6.984 20.452H3.689V9h3.295v11.452z" fill="#fff"/>
+  </svg>
+</a>
 
-        <!-- LinkedIn -->
-        <a class="soc-li" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;margin-right:6px;background:#0A66C2;border-radius:6px">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M20.447 20.452H17.21V14.8c0-1.354-.026-3.095-1.887-3.095-1.889 0-2.178 1.478-2.178 3.003v5.744H9.025V9h3.106v1.561h.043c.433-.82 1.493-1.687 3.071-1.687 3.284 0 3.888 2.162 3.888 4.972v6.606zM5.337 7.433a1.804 1.804 0 11-.002-3.609 1.804 1.804 0 01.002 3.609zM6.984 20.452H3.689V9h3.295v11.452z" fill="#fff"/>
-          </svg>
-        </a>
+<!-- TikTok -->
+<a class="soc-tt" href="https://www.tiktok.com/@collins1119?_r=1&_t=ZM-91XAMsjmF3o
+" target="_blank" rel="noopener noreferrer" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:#000;border-radius:6px">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+    <path d="M16.5 2c.3 1.6 1.4 2.9 3 3.2v3.1c-1.2 0-2.4-.4-3.4-1.1v7.3c0 3.5-2.9 6.3-6.5 6.3S3 18 3 14.5 5.9 8.2 9.5 8.2c.5 0 1 .1 1.5.2v3.3c-.5-.2-1-.3-1.5-.3-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3V2h4z" fill="#fff"/>
+  </svg>
+</a>
 
-        <!-- TikTok -->
-        <a class="soc-tt" href="#" style="width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:#000;border-radius:6px">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <path d="M16.5 2c.3 1.6 1.4 2.9 3 3.2v3.1c-1.2 0-2.4-.4-3.4-1.1v7.3c0 3.5-2.9 6.3-6.5 6.3S3 18 3 14.5 5.9 8.2 9.5 8.2c.5 0 1 .1 1.5.2v3.3c-.5-.2-1-.3-1.5-.3-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3V2h4z" fill="#fff"/>
-          </svg>
-        </a>
-
-      </div>
-
+</div>
+    
     </div>
+    <!-- CONTACT INFO -->
+    <div class="footer-links" style="color:#ffba08"><div class="footer-links" style="color:#ffba08">
+  <strong>Contact Info</strong>
+  <div style="color:#dff7ea">📍 Nairobi, Kenya</div>
 
+  <!-- Clickable Email -->
+  <div style="color:#dff7ea">
+    ✉️ 
+    <a href="mailto:info@skysettours.co.ke" style="color:#dff7ea; text-decoration:underline;">
+      info@skysettours.co.ke
+    </a>
   </div>
 
+  <!-- Clickable Phone → WhatsApp -->
+  <div style="color:#dff7ea">
+    📞 
+    <a href="https://wa.me/254 790220876" target="_blank" style="color:#dff7ea; text-decoration:underline;">
+      +254 790 220 876
+    </a>
+  </div>
+
+  <!-- Website -->
+  <div style="color:#dff7ea">🌍 <a href="https://www.skysettours.co.ke" style="color:#dff7ea; text-decoration:underline;">www.skysettours.co.ke</a></div>
+</div>
+</div>
+
+
   <!-- BOTTOM CENTERED RIGHTS TEXT -->
-  <div class="footer-bottom" style="text-align:center;margin-top:16px;color:#dff7ea">
+  <div class="footer-bottom">
     © <span id="year"></span>2025 Skyset Tours and Travel Limited. All rights reserved.
   </div>
 </footer>
 
+
   <script>
 
-   // ---------- Cursor ----------
+  // Highlight active nav link
+  const currentPage = window.location.pathname.split("/").pop(); // get current file name
+  const navLinks = document.querySelectorAll("nav a");
+
+  navLinks.forEach(link => {
+    const linkPage = link.getAttribute("href");
+    if (linkPage === currentPage) {
+      link.classList.add("active");
+    }
+  });
+
+  
+ // ---------- Cursor ----------
     const cursor = document.getElementById('cursor');
     document.addEventListener('mousemove', e => {
       cursor.style.left = e.clientX + 'px';
